@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard Infermiere</title>
+  <style>
+    body {
+      font-family: Arial;
+      background: #0d1117;
+      color: #e6edf3;
+      text-align: center;
+      padding: 20px;
+    }
+    .card {
+      background: #161b22;
+      padding: 15px;
+      margin: 10px auto;
+      border-radius: 12px;
+      width: 280px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>🏥 Dashboard</h1>
+<div id="app"></div>
+
+<script>
+fetch("data.json")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("app").innerHTML = `
+      <div class="card">
+        <h2>Turno</h2>
+        <p>${data.turno} - ${data.reparto}</p>
+      </div>
+
+      <div class="card">
+        <h2>Farmaci</h2>
+        <p>${data.farmaci_da_ripassare.join(", ")}</p>
+      </div>
+
+      <div class="card">
+        <h2>Procedure</h2>
+        <p>${data.procedure_oggi.join(", ")}</p>
+      </div>
+    `;
+  });
+</script>
+
+</body>
+</html>
