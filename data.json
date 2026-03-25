@@ -1,0 +1,6 @@
+{
+  "turno": "mattina",
+  "reparto": "medicina",
+  "farmaci_da_ripassare": ["eparina", "paracetamolo"],
+  "procedure_oggi": ["prelievo", "pressione"]
+}
